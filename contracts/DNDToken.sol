@@ -6,7 +6,7 @@ import "./libs/BEP20.sol";
 
 // DND with Governance.
 contract DNDToken is BEP20('DungeonSwap Token', 'DND') {
-    /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
+    /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (DungeonMaster).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
         _moveDelegates(address(0), _delegates[_to], _amount);
